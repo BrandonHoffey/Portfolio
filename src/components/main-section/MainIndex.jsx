@@ -4,15 +4,15 @@ import myImage from "../../assets/myImage.jpg";
 const MainIndex = () => {
   const containerStyle = {
     background: "#8ecae6",
-    height: "800px",
+    height: "690px",
   };
 
   const imageStyle = {
     borderRadius: "10px",
-    maxWidth: "300px",
+    maxWidth: "350px",
     display: "block",
     margin: "auto",
-    paddingTop: "10px"
+    paddingTop: "70px"
   };
 
   return (
