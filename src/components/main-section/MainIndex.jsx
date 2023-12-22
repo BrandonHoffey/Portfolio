@@ -8,11 +8,11 @@ const MainIndex = () => {
   };
 
   const imageStyle = {
-    borderRadius: "10px",
-    maxWidth: "350px",
+    borderRadius: "60px",
+    maxWidth: "400px",
     display: "block",
     margin: "auto",
-    paddingTop: "70px"
+    padding: "40px"
   };
 
   return (

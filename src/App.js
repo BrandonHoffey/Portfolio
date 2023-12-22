@@ -1,18 +1,17 @@
 import "./App.css";
-import MainFooter from "./components/main-section/FooterInfo";
-import Header from "./components/main-section/Header";
-import MainIndex from "./components/main-section/MainIndex";
-import NavigationBar from "./components/main-section/NavigationBar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AboutMeMain from "./components/aboutMe/MainAboutMe";
+import MainPage from "./components/main-section/MainPage";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <NavigationBar />
-      <MainIndex />
-      <MainFooter />
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/about-me" element={<AboutMeMain />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

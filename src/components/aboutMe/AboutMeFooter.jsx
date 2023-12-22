@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainFooter = () => {
+const AboutMeFooter = () => {
   const containerStyle = {
     background: "#023047",
     padding: "20px",
@@ -19,7 +19,6 @@ const MainFooter = () => {
     marginBottom: "20px",
     color: "white",
   };
-
   return (
     <div style={containerStyle}>
       <h3 style={contactInfoStyle}>
@@ -40,4 +39,4 @@ const MainFooter = () => {
   );
 };
 
-export default MainFooter;
+export default AboutMeFooter;
