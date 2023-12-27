@@ -3,9 +3,12 @@ import React from "react";
 const AboutMeFooter = () => {
   const containerStyle = {
     background: "#023047",
-    padding: "20px",
+    padding: "10px",
     fontFamily: "'Josefin Slab', sans-serif",
     textAlign: "center",
+    position: "fixed",
+    bottom: "0",
+    width: "100%"
   };
 
   const linkStyle = {
@@ -16,7 +19,7 @@ const AboutMeFooter = () => {
 
   const contactInfoStyle = {
     marginTop: "1px",
-    marginBottom: "20px",
+    marginBottom: "12px",
     color: "white",
   };
   return (
