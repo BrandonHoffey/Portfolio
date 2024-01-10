@@ -67,7 +67,7 @@ const NavigationBar = () => {
   };
 
   const handleMyProjectsClick = () => {
-    alert("Navigate to My Projects");
+  navigate("/my-projects");
   };
 
   const handleWorkExperienceClick = () => {

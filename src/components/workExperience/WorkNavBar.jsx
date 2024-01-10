@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 
-const AboutMeNavigationBar = () => {
+const WorkNavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -70,13 +70,13 @@ const AboutMeNavigationBar = () => {
     navigate("/my-projects");
   };
 
-  const handleWorkExperienceClick = () => {
-    navigate("/work-experience");
+  const handleAboutMeClick = () => {
+    navigate("/about-me");
   };
 
   return (
     <div style={containerStyle}>
-      <h1 style={navigationStyle}>About Me</h1>
+      <h1 style={navigationStyle}>Work Experience</h1>
       <div style={dropdownStyle}>
         <ul style={listStyle}>
           <li style={listItemStyle} onClick={handleMainPageClick}>
@@ -85,8 +85,8 @@ const AboutMeNavigationBar = () => {
           <li style={listItemStyle} onClick={handleMyProjectsClick}>
             -My Projects-
           </li>
-          <li style={listItemStyle} onClick={handleWorkExperienceClick}>
-            -Work Experience-
+          <li style={listItemStyle} onClick={handleAboutMeClick}>
+            -About Me-
           </li>
         </ul>
       </div>
@@ -100,4 +100,4 @@ const AboutMeNavigationBar = () => {
   );
 };
 
-export default AboutMeNavigationBar;
+export default WorkNavBar;
