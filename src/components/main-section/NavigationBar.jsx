@@ -71,7 +71,7 @@ const NavigationBar = () => {
   };
 
   const handleWorkExperienceClick = () => {
-    alert("Navigate to Work Experience");
+    navigate("/work-experience");
   };
 
   return (
