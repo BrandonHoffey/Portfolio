@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import resumeScreenshot from '../../assets/Screenshot.png';
 
 const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -7,13 +8,7 @@ const Modal = ({ isOpen, onClose }) => {
     <div style={overlayStyle}>
       <div style={modalStyle}>
         <button onClick={onClose} style={closeButtonStyle}>X</button>
-        <iframe
-          src="../../assets/Resume.pdf"
-          width="100%"
-          height="100%"
-          style={{ border: "none" }}
-          title="Resume"
-        ></iframe>
+        <img style={screenshotStyle} src={resumeScreenshot} alt="Screenshot of my resume" />
       </div>
     </div>
   );
@@ -38,9 +33,15 @@ const modalStyle = {
   width: '80%',
   height: '80%',
   backgroundColor: '#fff',
-  padding: '20px',
+  padding: '40px',
   borderRadius: '5px',
   overflow: 'hidden',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
+
+const screenshotStyle = {
 };
 
 const closeButtonStyle = {
