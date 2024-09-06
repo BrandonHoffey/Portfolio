@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Modal from "./ResumeModal";
+import Work1 from "./Work1";
+import Work2 from "./Work2";
+import Work3 from "./Work3";
+import Work4 from "./Work4";
 
 const WorkMain = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,6 +48,10 @@ const WorkMain = () => {
   return (
     <>
       <div style={containerStyle}>
+    <Work1 />
+    <Work2 />
+    <Work3 />
+    <Work4 />
         <div
           style={{
             flex: "1 1 auto",
@@ -52,74 +60,9 @@ const WorkMain = () => {
             gap: "10px",
           }}
         >
-          <div>
-            <table style={tableStyle}>
-              <thead style={headerFooterStyle}>
-                <tr>
-                  <th colspan="3">Software Development Bootcamp</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    Student Upright Education Full Stack Software Development
-                    Bootcamp Denver, CO 9/11/23-12/16/23 A fully remote
-                    full-stack software development bootcamp, mon-fri 7a-3p.
-                    Full SDLC using HTML, CSS, Javascript, React, React Native,
-                    plus many more development tools.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <table style={tableStyle}>
-              <thead style={headerFooterStyle}>
-                <tr>
-                  <th colspan="3">Postino Bistro & Wine</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>The table body</td>
-                  <td>with two columns</td>
-                  <td>Hello</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <table style={tableStyle}>
-              <thead style={headerFooterStyle}>
-                <tr>
-                  <th colspan="3">Littleton Emergency Department</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>The table body</td>
-                  <td>with two columns</td>
-                  <td>Hello</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <table style={tableStyle}>
-              <thead style={headerFooterStyle}>
-                <tr>
-                  <th colspan="3">Mountain States Ambulance</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>The table body</td>
-                  <td>with two columns</td>
-                  <td>Hello</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        </div>
+        <div>
+          <h1>Hello</h1>
         </div>
         <div style={resumeStyle}>
           <button onClick={() => setIsModalOpen(true)}>View My Resume</button>
