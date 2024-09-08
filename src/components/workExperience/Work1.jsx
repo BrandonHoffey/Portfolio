@@ -1,6 +1,7 @@
 const Work1 = () => {
   const MainContainerStyle = {
     border: "1px solid black",
+    marginRight: "35%", 
   };
   const HeaderStyle = {
     border: "1px solid black",
