@@ -1,11 +1,17 @@
 const Work3 = () => {
-    const MainContainerStyle = {
-      border: "1px solid black",
-      marginRight: "35%",
-    };
+  const MainContainerStyle = {
+    border: "4px solid #023047",
+    marginRight: "35%",
+    fontFamily: "'Josefin Slab', sans-serif",
+    backgroundColor: "#eeeee4",
+    borderRadius: "10px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  };
     const HeaderStyle = {
-      border: "1px solid black",
       marginTop: "0px",
+      fontFamily: "'Julius Sans One', sans-serif",
+      backgroundColor: "#023047",
+      color: "#eeeee4",
     };
     return (
       <div id="MainContainer" style={MainContainerStyle}>
