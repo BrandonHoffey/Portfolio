@@ -12,18 +12,39 @@ const Work1 = () => {
     fontFamily: "'Julius Sans One', sans-serif",
     backgroundColor: "#023047",
     color: "#eeeee4",
+    marginBottom: "5px"
+  };
+
+  const h3Style = {
+    paddingLeft: "5px",
+    paddingRight: "5px",
+    marginBottom: "5px"
+  };
+
+  const locationStyle = {
+    fontStyle: "italic",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+  };
+
+  const titleStyle = {
+    textDecoration: "underline",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+    marginBottom: "1px",
+    marginTop: "1px"
   };
   return (
     <div id="MainContainer" style={MainContainerStyle}>
       <h1 id="Header" style={HeaderStyle}>
         Software Development Bootcamp
       </h1>
-      <h3>&#8226; Student</h3>
-      <h3>
-        &#8226; Upright Education Full Stack Software Development Bootcamp{" "}
+      <h2 style={titleStyle}>Student</h2>
+      <h3 style={h3Style}>
+        Upright Education - Full Stack Software Development Bootcamp
       </h3>
-      <h3>&#8226; Denver, CO 9/11/23 - 12/16/23</h3>
-      <h3>
+      <h3 style={locationStyle}>Denver, CO 9/11/23 - 12/16/23</h3>
+      <h3 style={h3Style}>
         &#8226; A fully remote full-stack software development bootcamp, mon-fri
         7a-3p. Full SDLC using HTML, CSS, Javascript, React, React Native, plus
         many more development tools.

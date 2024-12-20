@@ -13,15 +13,19 @@ const Work2 = () => {
     backgroundColor: "#023047",
     color: "#eeeee4",
   };
+  const h3Style = {
+    paddingLeft: "5px",
+    paddingRight: "5px",
+  };
   return (
     <div id="MainContainer" style={MainContainerStyle}>
       <h1 id="Header" style={HeaderStyle}>
         Upward Projects Restaurants
       </h1>
-      <h3>&#8226; Server / Bartender</h3>
-      <h3>&#8226; Postino Wine Bistro</h3>
-      <h3>&#8226; Highlands Ranch, CO 09/2022 - Current</h3>
-      <h3>
+      <h3 style={h3Style}>&#8226; Server / Bartender</h3>
+      <h3 style={h3Style}>&#8226; Postino Wine Bistro</h3>
+      <h3 style={h3Style}>&#8226; Highlands Ranch, CO 09/2022 - Current</h3>
+      <h3 style={h3Style}>
         &#8226; I provided exceptional customer service to approximately 50
         guests daily, ensuring a positive dining experience. I adapted quickly
         to menu changes and wine rotations, contributed to monthly sales
