@@ -8,7 +8,7 @@ const bottomContainerStyle = {
   display: "flex",
   flexDisplay: "row",
   justifyContent: "center",
-  gap: "175px",
+  gap: "80px",
   marginBottom: "80px",
 };
 
@@ -26,6 +26,10 @@ const bottomContainer3Style = {
 
 const titleStyle = {
   border: "1px solid black",
+  display: "flex",
+  justifyContent: "center",
+  marginTop: "0",
+  marginBottom: "4px",
 };
 
 const imageContainerStyle = {
@@ -34,17 +38,17 @@ const imageContainerStyle = {
 
 const escapeImageStyle = {
   height: "400px",
-  width: "254px",
+  width: "550px",
 };
 
 const jeopardyImageStyle = {
-  height: "400px",
-  width: "185px",
+  height: "259px",
+  width: "550px",
 };
 
 const numberStyle = {
-  height: "400px",
-  width: "792px",
+  height: "271px",
+  width: "550px",
 };
 
 const bottomContainer = () => {

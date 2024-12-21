@@ -8,7 +8,8 @@ const topContainerStyle = {
   flexDisplay: "row",
   justifyContent: "center",
   gap: "175px",
-  marginTop: "8px"
+  marginTop: "8px",
+  marginBottom: "10px",
 };
 
 const topContainer1Style = {
@@ -21,6 +22,10 @@ const topContainer2Style = {
 
 const titleStyle = {
   border: "1px solid black",
+  display: "flex",
+  justifyContent: "center",
+  marginTop: "0",
+  marginBottom: "4px",
 };
 
 const imageContainerStyle = {
