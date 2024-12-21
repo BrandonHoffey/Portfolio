@@ -12,19 +12,36 @@ const Work3 = () => {
     fontFamily: "'Julius Sans One', sans-serif",
     backgroundColor: "#023047",
     color: "#eeeee4",
+    marginBottom: "5px"
   };
   const h3Style = {
     paddingLeft: "5px",
     paddingRight: "5px",
+    marginBottom: "5px",
+  };
+
+  const locationStyle = {
+    fontStyle: "italic",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+  };
+
+  const titleStyle = {
+    textDecoration: "underline",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+    marginBottom: "1px",
+    marginTop: "1px",
+    fontFamily: "'Julius Sans One', sans-serif",
   };
   return (
     <div id="MainContainer" style={MainContainerStyle}>
       <h1 id="Header" style={HeaderStyle}>
         Littleton Emergency Department
       </h1>
-      <h3 style={h3Style}>&#8226; Critical Care Technician</h3>
-      <h3 style={h3Style}>&#8226; Level 2 trauma center in Littleton, CO</h3>
-      <h3 style={h3Style}>&#8226; Littleton, CO 01/2017 - 09/2022</h3>
+      <h2 style={titleStyle}>Critical Care Technician</h2>
+      <h3 style={h3Style}>Level 2 trauma center in Littleton, CO</h3>
+      <h3 style={locationStyle}>Littleton, CO 01/2017 - 09/2022</h3>
       <h3 style={h3Style}>
         &#8226; I assisted with various procedures such as splinting,
         suture/staple removal, and CPR, showcasing versatility and adaptability

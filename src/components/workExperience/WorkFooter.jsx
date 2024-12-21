@@ -14,6 +14,7 @@ const WorkFooter = () => {
     color: "#fb8500",
     marginRight: "20px",
     textDecoration: "none",
+    fontFamily: "'Julius Sans One', sans-serif",
   };
 
   const contactInfoStyle = {

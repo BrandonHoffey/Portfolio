@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Fourteener from "../../assets/14er01.jpg";
-import Hiking from "../../assets/Hiking01.jpg";
-import Skiing from "../../assets/Skiing01.jpg";
-import WinterCampingOne from "../../assets/WinterCamping01.jpg";
-import WinterCampingTwo from "../../assets/WinterCamping02.jpg";
+import Fourteener from "../../assets/aboutMe/14er01.jpg";
+import Hiking from "../../assets/aboutMe/Hiking01.jpg";
+import Skiing from "../../assets/aboutMe/Skiing01.jpg";
+import WinterCampingOne from "../../assets/aboutMe/WinterCamping01.jpg";
+import WinterCampingTwo from "../../assets/aboutMe/WinterCamping02.jpg";
 import { AiTwotoneRightSquare } from "react-icons/ai";
 import { AiTwotoneLeftSquare } from "react-icons/ai";
 

@@ -12,19 +12,36 @@ const Work2 = () => {
     fontFamily: "'Julius Sans One', sans-serif",
     backgroundColor: "#023047",
     color: "#eeeee4",
+    marginBottom: "5px"
   };
   const h3Style = {
     paddingLeft: "5px",
     paddingRight: "5px",
+        marginBottom: "5px"
+  };
+
+  const locationStyle = {
+    fontStyle: "italic",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+  };
+
+  const titleStyle = {
+    textDecoration: "underline",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+    marginBottom: "1px",
+    marginTop: "1px",
+    fontFamily: "'Julius Sans One', sans-serif",
   };
   return (
     <div id="MainContainer" style={MainContainerStyle}>
       <h1 id="Header" style={HeaderStyle}>
         Upward Projects Restaurants
       </h1>
-      <h3 style={h3Style}>&#8226; Server / Bartender</h3>
-      <h3 style={h3Style}>&#8226; Postino Wine Bistro</h3>
-      <h3 style={h3Style}>&#8226; Highlands Ranch, CO 09/2022 - Current</h3>
+      <h2 style={titleStyle}>Server / Bartender</h2>
+      <h3 style={h3Style}>Postino Wine Bistro</h3>
+      <h3 style={locationStyle}>Highlands Ranch, CO 09/2022 - Current</h3>
       <h3 style={h3Style}>
         &#8226; I provided exceptional customer service to approximately 50
         guests daily, ensuring a positive dining experience. I adapted quickly

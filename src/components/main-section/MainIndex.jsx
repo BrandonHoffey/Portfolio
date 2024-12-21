@@ -1,5 +1,5 @@
 import React from "react";
-import myImage from "../../assets/myImage.jpg";
+import myImage from "../../assets/aboutMe/myImage.jpg";
 
 const MainIndex = () => {
   const containerStyle = {

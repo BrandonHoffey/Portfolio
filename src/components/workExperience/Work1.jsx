@@ -12,13 +12,13 @@ const Work1 = () => {
     fontFamily: "'Julius Sans One', sans-serif",
     backgroundColor: "#023047",
     color: "#eeeee4",
-    marginBottom: "5px"
+    marginBottom: "5px",
   };
 
   const h3Style = {
     paddingLeft: "5px",
     paddingRight: "5px",
-    marginBottom: "5px"
+    marginBottom: "5px",
   };
 
   const locationStyle = {
@@ -32,8 +32,10 @@ const Work1 = () => {
     paddingLeft: "5px",
     paddingRight: "5px",
     marginBottom: "1px",
-    marginTop: "1px"
+    marginTop: "1px",
+    fontFamily: "'Julius Sans One', sans-serif",
   };
+
   return (
     <div id="MainContainer" style={MainContainerStyle}>
       <h1 id="Header" style={HeaderStyle}>

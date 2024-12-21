@@ -1,7 +1,14 @@
 import React from "react";
+import TopContainer from "./TopContainer";
+import BottomContainer from "./BottomContainer";
 
 const MyProjectsMain = () => {
-  return <h1>Hello from MyProjects Main</h1>;
+  return (
+    <div>
+      <TopContainer />
+      <BottomContainer />
+    </div>
+  );
 };
 
 export default MyProjectsMain;
