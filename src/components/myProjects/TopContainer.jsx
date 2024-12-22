@@ -22,24 +22,34 @@ const topContainer2Style = {
 
 const titleStyle = {
   border: "1px solid black",
+  borderRadius: "10px",
   display: "flex",
   justifyContent: "center",
   marginTop: "0",
   marginBottom: "4px",
+  fontFamily: "'Julius Sans One', sans-serif",
+  backgroundColor: "#023047",
+  color: "#eeeee4",
 };
 
 const imageContainerStyle = {
-  border: "1px solid black",
+  border: "4px solid #023047",
+  backgroundColor: "#eeeee4",
+  borderRadius: "10px",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  height: "400px"
 };
 
 const ellieImageStyle = {
   height: "400px",
-  width: "254px",
+  width: "281px",
+  borderRadius: "10px",
 };
 
 const nightlightImageStyle = {
   height: "400px",
-  width: "185px",
+  width: "201px",
+  borderRadius: "5px",
 };
 
 const TopContainer = () => {
@@ -58,7 +68,7 @@ const TopContainer = () => {
           <div>
             <h1 style={titleStyle}>Nightlight</h1>
           </div>
-          <div>
+          <div style={imageContainerStyle}>
             <img
               style={nightlightImageStyle}
               src={nightlight3}

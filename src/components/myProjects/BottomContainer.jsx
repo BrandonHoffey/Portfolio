@@ -26,29 +26,55 @@ const bottomContainer3Style = {
 
 const titleStyle = {
   border: "1px solid black",
+  borderRadius: "10px",
   display: "flex",
   justifyContent: "center",
   marginTop: "0",
   marginBottom: "4px",
+  fontFamily: "'Julius Sans One', sans-serif",
+  backgroundColor: "#023047",
+  color: "#eeeee4",
 };
 
 const imageContainerStyle = {
-  border: "1px solid black",
+  border: "4px solid #023047",
+  backgroundColor: "#eeeee4",
+  borderRadius: "10px",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  height: "400px"
 };
+
+const jeopardyContainerStyle = {
+  border: "4px solid #023047",
+  backgroundColor: "#eeeee4",
+  borderRadius: "10px",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+}
+
+const numberContainerStyle = {
+  border: "4px solid #023047",
+  backgroundColor: "#eeeee4",
+  borderRadius: "10px",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  height: "278px"
+}
 
 const escapeImageStyle = {
   height: "400px",
   width: "550px",
+  borderRadius: "5px",
 };
 
 const jeopardyImageStyle = {
   height: "259px",
   width: "550px",
+  borderRadius: "10px",
 };
 
 const numberStyle = {
-  height: "271px",
+  height: "278px",
   width: "550px",
+  borderRadius: "5px",
 };
 
 const bottomContainer = () => {
@@ -71,7 +97,7 @@ const bottomContainer = () => {
           <div>
             <h1 style={titleStyle}>Jeopardy Board</h1>
           </div>
-          <div>
+          <div style={jeopardyContainerStyle}>
             <img style={jeopardyImageStyle} src={Jeopardy1} alt="nightlight3" />
           </div>
         </div>
@@ -79,7 +105,7 @@ const bottomContainer = () => {
           <div>
             <h1 style={titleStyle}>Guess The Number</h1>
           </div>
-          <div>
+          <div style={numberContainerStyle}>
             <img style={numberStyle} src={Number} alt="" />
           </div>
         </div>
