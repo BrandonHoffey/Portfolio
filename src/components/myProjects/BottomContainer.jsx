@@ -37,21 +37,6 @@ const imageContainerStyle = {
   height: "400px",
 };
 
-const jeopardyContainerStyle = {
-  border: "4px solid #023047",
-  backgroundColor: "#eeeee4",
-  borderRadius: "10px",
-  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-};
-
-const numberContainerStyle = {
-  border: "4px solid #023047",
-  backgroundColor: "#eeeee4",
-  borderRadius: "10px",
-  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  height: "278px",
-};
-
 const escapeImageStyle = {
   height: "400px",
   width: "550px",
@@ -107,6 +92,7 @@ const BottomContainer = () => {
               border: hoveredJeopardy
                 ? "4px solid yellow"
                 : "4px solid #023047",
+              height: "259px",
             }}
             onMouseEnter={() => setHoveredJeopardy(true)}
             onMouseLeave={() => setHoveredJeopardy(false)}
@@ -118,14 +104,15 @@ const BottomContainer = () => {
           <div>
             <h1 style={titleStyle}>Guess The Number</h1>
           </div>
-          <div style={{
+          <div
+            style={{
               ...imageContainerStyle,
-              border: hoveredNumber
-                ? "4px solid yellow"
-                : "4px solid #023047",
+              border: hoveredNumber ? "4px solid yellow" : "4px solid #023047",
+              height: "278px",
             }}
             onMouseEnter={() => setHoveredNumber(true)}
-            onMouseLeave={() => setHoveredNumber(false)}>
+            onMouseLeave={() => setHoveredNumber(false)}
+          >
             <img style={numberStyle} src={Number} alt="" />
           </div>
         </div>

@@ -48,9 +48,9 @@ const NavigationBar = () => {
     padding: 12,
     listStyle: "none",
     textAlign: "center",
-    width: "150px",
+    width: "250px",
     transition: "opacity 0.3s ease",
-    fontFamily: "'Josefin Slab', sans-serif",
+    fontFamily: "'Julius Sans One', sans-serif",
   };
 
   const listItemStyle = {

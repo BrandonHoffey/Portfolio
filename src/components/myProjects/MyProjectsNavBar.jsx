@@ -31,7 +31,7 @@ const MyProjectsNavBar = () => {
     transform: "translateX(-50%)",
     opacity: isDropdownOpen ? 1 : 0,
     transition: "opacity 0.3s ease",
-    padding: "10px",
+    padding: "1px",
   };
 
   const iconStyle = {
@@ -48,9 +48,9 @@ const MyProjectsNavBar = () => {
     padding: 12,
     listStyle: "none",
     textAlign: "center",
-    width: "150px",
+    width: "250px",
     transition: "opacity 0.3s ease",
-    fontFamily: "'Josefin Slab', sans-serif",
+    fontFamily: "'Julius Sans One', sans-serif",
   };
 
   const listItemStyle = {

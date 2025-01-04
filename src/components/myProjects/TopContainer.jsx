@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import ellieHoffey1 from "../../assets/ellieHoffey/1.png";
-import nightlight3 from "../../assets/Nightlight/5.png";
-import { useState } from "react";
+import nightlight1 from "../../assets/Nightlight/1.PNG";
+import nightlight2 from "../../assets/Nightlight/2.PNG";
+import nightlight3 from "../../assets/Nightlight/3.PNG";
+import nightlight4 from "../../assets/Nightlight/4.png";
+import nightlight5 from "../../assets/Nightlight/5.png";
+import nightlight6 from "../../assets/Nightlight/6.png";
+import nightlight7 from "../../assets/Nightlight/7.png";
+import nightlight8 from "../../assets/Nightlight/8.png";
+import nightlight9 from "../../assets/Nightlight/9.png";
+import nightlight10 from "../../assets/Nightlight/10.png";
+import nightlight11 from "../../assets/Nightlight/11.png";
+import nightlight12 from "../../assets/Nightlight/12.png";
+
+const nightlightArray = [
+  nightlight1,
+  nightlight2,
+  nightlight3,
+  nightlight4,
+  nightlight5,
+  nightlight6,
+  nightlight7,
+  nightlight8,
+  nightlight9,
+  nightlight10,
+  nightlight11,
+  nightlight12,
+];
 
 const topContainerStyle = {
   display: "flex",
@@ -29,6 +54,7 @@ const imageContainerStyle = {
   borderRadius: "10px",
   boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
   height: "400px",
+  position: "relative",
 };
 
 const ellieImageStyle = {
@@ -43,9 +69,55 @@ const nightlightImageStyle = {
   borderRadius: "5px",
 };
 
+const arrowStyle = {
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  backgroundColor: "transparent",
+  border: "none",
+  fontSize: "2rem",
+  cursor: "pointer",
+  zIndex: 10,
+  color: "rgba(0, 0, 0, 0.5)",
+};
+
+const leftArrowStyle = {
+  ...arrowStyle,
+  left: "10px",
+  color: "white",
+};
+
+const rightArrowStyle = {
+  ...arrowStyle,
+  right: "10px",
+  color: "white",
+};
+
 const TopContainer = () => {
   const [hoveredEllie, setHoveredEllie] = useState(false);
   const [hoveredNightlight, setHoveredNightlight] = useState(false);
+  const [nightlightImageIndex, setNightlightImageIndex] = useState(0);
+
+  const handleNightlightHover = () => {
+    setHoveredNightlight(true);
+  };
+
+  const handleNightlightLeave = () => {
+    setHoveredNightlight(false);
+  };
+
+  const handleNextImage = () => {
+    setNightlightImageIndex(
+      (prevIndex) => (prevIndex + 1) % nightlightArray.length
+    );
+  };
+
+  const handlePreviousImage = () => {
+    setNightlightImageIndex(
+      (prevIndex) =>
+        prevIndex === 0 ? nightlightArray.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <>
@@ -82,8 +154,8 @@ const TopContainer = () => {
                 ? "4px solid yellow"
                 : "4px solid #023047",
             }}
-            onMouseEnter={() => setHoveredNightlight(true)}
-            onMouseLeave={() => setHoveredNightlight(false)}
+            onMouseEnter={handleNightlightHover}
+            onMouseLeave={handleNightlightLeave}
           >
             <a
               href="https://github.com/BrandonHoffey/Nightlight.git"
@@ -92,10 +164,29 @@ const TopContainer = () => {
             >
               <img
                 style={nightlightImageStyle}
-                src={nightlight3}
-                alt="nightlight3"
+                src={nightlightArray[nightlightImageIndex]}
+                alt="nightlight"
               />
             </a>
+
+            {hoveredNightlight && (
+              <>
+                <button
+                  style={leftArrowStyle}
+                  onClick={handlePreviousImage}
+                  aria-label="Previous Image"
+                >
+                  &#8592;
+                </button>
+                <button
+                  style={rightArrowStyle}
+                  onClick={handleNextImage}
+                  aria-label="Next Image"
+                >
+                  &#8594;
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
