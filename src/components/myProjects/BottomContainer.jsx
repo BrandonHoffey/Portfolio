@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import EscapeTheHospital1 from "../../assets/EscapeTheHospital/1.PNG";
 import Jeopardy1 from "../../assets/JeopardyGame/1.PNG";
 import Number from "../../assets/GuessTheNumber/1.PNG";
-import { useState } from "react";
 
 const bottomContainerStyle = {
   display: "flex",
@@ -59,6 +58,18 @@ const BottomContainer = () => {
   const [hoveredEscape, setHoveredEscape] = useState(false);
   const [hoveredJeopardy, setHoveredJeopardy] = useState(false);
   const [hoveredNumber, setHoveredNumber] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState("");
+
+  const openModal = (image) => {
+    setCurrentImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage("");
+  };
 
   return (
     <>
@@ -74,6 +85,7 @@ const BottomContainer = () => {
             }}
             onMouseEnter={() => setHoveredEscape(true)}
             onMouseLeave={() => setHoveredEscape(false)}
+            onClick={() => openModal(EscapeTheHospital1)}
           >
             <img
               style={escapeImageStyle}
@@ -112,13 +124,52 @@ const BottomContainer = () => {
             }}
             onMouseEnter={() => setHoveredNumber(true)}
             onMouseLeave={() => setHoveredNumber(false)}
+            onClick={() => openModal(Number)}
           >
             <img style={numberStyle} src={Number} alt="" />
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div style={modalBackdropStyle} onClick={closeModal}>
+          <div style={modalContentStyle}>
+            <img
+              src={currentImage}
+              alt="Enlarged"
+              style={modalImageStyle}
+            ></img>
+          </div>
+        </div>
+      )}
     </>
   );
+};
+
+const modalBackdropStyle = {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: "rgba(0, 0, 0, 0.8)",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  zIndex: 1000,
+};
+
+const modalContentStyle = {
+  position: "relative",
+  maxWidth: "90%",
+  maxHeight: "80%",
+  textAlign: "center",
+};
+
+const modalImageStyle = {
+  width: "100%",
+  height: "auto",
+  borderRadius: "10px",
 };
 
 export default BottomContainer;

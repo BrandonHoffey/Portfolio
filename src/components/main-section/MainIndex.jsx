@@ -5,6 +5,8 @@ const MainIndex = () => {
   const containerStyle = {
     background: "#8ecae6",
     height: "690px",
+    overflow: "hidden",
+    paddingBottom: "2px"
   };
 
   const imageStyle = {

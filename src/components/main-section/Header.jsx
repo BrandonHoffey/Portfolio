@@ -6,6 +6,7 @@ const Header = () => {
     padding: "5px",
     background: "#219ebc",
     fontFamily: "'Julius Sans One', sans-serif",
+    overflow: "hidden",
   };
   return (
     <header style={headerStyle}>

@@ -3,9 +3,10 @@ import React from "react";
 const MainFooter = () => {
   const containerStyle = {
     background: "#023047",
-    padding: "20px",
+    paddingTop: "10px",
     fontFamily: "'Josefin Slab', sans-serif",
     textAlign: "center",
+    overfow: "hidden",
   };
 
   const linkStyle = {

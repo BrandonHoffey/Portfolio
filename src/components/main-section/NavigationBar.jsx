@@ -15,6 +15,7 @@ const NavigationBar = () => {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "0 10px",
+    overflow: "hidden",
   };
 
   const navigationStyle = {

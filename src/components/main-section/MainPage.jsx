@@ -7,7 +7,12 @@ import NavigationBar from "./NavigationBar";
 const MainPage = () => {
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        overflow: "hidden",
+      }}
     >
       <Header />
       <NavigationBar />
