@@ -12,6 +12,7 @@ import nightlight9 from "../../assets/Nightlight/9.png";
 import nightlight10 from "../../assets/Nightlight/10.png";
 import nightlight11 from "../../assets/Nightlight/11.png";
 import nightlight12 from "../../assets/Nightlight/12.png";
+import { AiOutlineCaretRight, AiOutlineCaretLeft } from "react-icons/ai";
 
 const nightlightArray = [
   nightlight1,
@@ -83,13 +84,13 @@ const arrowStyle = {
 
 const leftArrowStyle = {
   ...arrowStyle,
-  left: "10px",
-  color: "white",
+  left: "-50px",
+  color: "black",
 };
 
 const rightArrowStyle = {
   ...arrowStyle,
-  right: "10px",
+  right: "-50px",
   color: "white",
 };
 
@@ -97,6 +98,7 @@ const TopContainer = () => {
   const [hoveredEllie, setHoveredEllie] = useState(false);
   const [hoveredNightlight, setHoveredNightlight] = useState(false);
   const [nightlightImageIndex, setNightlightImageIndex] = useState(0);
+  const [arrowHovered, setArrowHovered] = useState(false);
 
   const handleNightlightHover = () => {
     setHoveredNightlight(true);
@@ -106,6 +108,14 @@ const TopContainer = () => {
     setHoveredNightlight(false);
   };
 
+  const handleEllieHover = () => {
+    setHoveredEllie(true);
+  };
+
+  const handleEllieHoverLeave = () => {
+    setHoveredEllie(false);
+  };
+
   const handleNextImage = () => {
     setNightlightImageIndex(
       (prevIndex) => (prevIndex + 1) % nightlightArray.length
@@ -113,9 +123,8 @@ const TopContainer = () => {
   };
 
   const handlePreviousImage = () => {
-    setNightlightImageIndex(
-      (prevIndex) =>
-        prevIndex === 0 ? nightlightArray.length - 1 : prevIndex - 1
+    setNightlightImageIndex((prevIndex) =>
+      prevIndex === 0 ? nightlightArray.length - 1 : prevIndex - 1
     );
   };
 
@@ -129,10 +138,10 @@ const TopContainer = () => {
           <div
             style={{
               ...imageContainerStyle,
-              border: hoveredEllie ? "4px solid yellow" : "4px solid #023047",
+              border: hoveredEllie ? "4px solid yellow" : "4px solid #023047", // Change border on hover
             }}
-            onMouseEnter={() => setHoveredEllie(true)}
-            onMouseLeave={() => setHoveredEllie(false)}
+            onMouseEnter={handleEllieHover}
+            onMouseLeave={handleEllieHoverLeave}
           >
             <a
               href="https://www.elliehoffey.com"
@@ -143,7 +152,7 @@ const TopContainer = () => {
             </a>
           </div>
         </div>
-        <div id="topContainer2">
+        <div id="topContainer2" style={{ position: "relative" }}>
           <div>
             <h1 style={titleStyle}>Nightlight</h1>
           </div>
@@ -152,7 +161,7 @@ const TopContainer = () => {
               ...imageContainerStyle,
               border: hoveredNightlight
                 ? "4px solid yellow"
-                : "4px solid #023047",
+                : "4px solid #023047", // Change border on hover
             }}
             onMouseEnter={handleNightlightHover}
             onMouseLeave={handleNightlightLeave}
@@ -168,26 +177,33 @@ const TopContainer = () => {
                 alt="nightlight"
               />
             </a>
-
-            {hoveredNightlight && (
-              <>
-                <button
-                  style={leftArrowStyle}
-                  onClick={handlePreviousImage}
-                  aria-label="Previous Image"
-                >
-                  &#8592;
-                </button>
-                <button
-                  style={rightArrowStyle}
-                  onClick={handleNextImage}
-                  aria-label="Next Image"
-                >
-                  &#8594;
-                </button>
-              </>
-            )}
           </div>
+
+          <button
+            style={leftArrowStyle}
+            onClick={handlePreviousImage}
+            aria-label="Previous Image"
+            onMouseEnter={() => setArrowHovered(true)}
+            onMouseLeave={() => setArrowHovered(false)}
+          >
+            <AiOutlineCaretLeft
+              size={40}
+              color={arrowHovered ? "white" : "#023047"}
+            />
+          </button>
+
+          <button
+            style={rightArrowStyle}
+            onClick={handleNextImage}
+            aria-label="Next Image"
+            onMouseEnter={() => setArrowHovered(true)}
+            onMouseLeave={() => setArrowHovered(false)}
+          >
+            <AiOutlineCaretRight
+              size={40}
+              color={arrowHovered ? "white" : "#023047"}
+            />
+          </button>
         </div>
       </div>
     </>
