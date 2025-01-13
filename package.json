@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio-app",
   "version": "0.1.0",
-  "homepage": "https://www.brandonhoffey.com",
+  "homepage": "https://BrandonHoffey.github.io/Portfolio",
   "private": true,
   "dependencies": {
     "@expo/vector-icons": "^14.0.4",
