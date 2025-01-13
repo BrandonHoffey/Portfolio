@@ -49,7 +49,7 @@ const Work1 = () => {
       <h3 style={h3Style}>
         &#8226; A fully remote full-stack software development bootcamp, mon-fri
         7a-3p. Full SDLC using HTML, CSS, Javascript, React, React Native, plus
-        many more development tools....
+        many more development tools.
       </h3>
     </div>
   );
