@@ -161,7 +161,7 @@ const TopContainer = () => {
               ...imageContainerStyle,
               border: hoveredNightlight
                 ? "4px solid yellow"
-                : "4px solid #023047", // Change border on hover
+                : "4px solid #023047",
             }}
             onMouseEnter={handleNightlightHover}
             onMouseLeave={handleNightlightLeave}

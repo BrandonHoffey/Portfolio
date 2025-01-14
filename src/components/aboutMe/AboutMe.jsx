@@ -40,7 +40,9 @@ const AboutMe = () => {
         padding: "2px",
         paddingLeft: "3vw",
         maxWidth: "100%",
-        overflow: "hidden"
+        overflow: "hidden",
+        background: "#8ecae6",
+        paddingBottom: "7px",
       }}
     >
       <div

@@ -6,7 +6,11 @@ const MainFooter = () => {
     paddingTop: "10px",
     fontFamily: "'Josefin Slab', sans-serif",
     textAlign: "center",
+    position: "fixed",
+    bottom: "0",
+    width: "100%",
     overfow: "hidden",
+    paddingBottom: "6px",
   };
 
   const linkStyle = {
