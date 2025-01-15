@@ -4,17 +4,19 @@ import { useNavigate } from "react-router-dom";
 
 const WorkNavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
   const navigate = useNavigate();
 
   const containerStyle = {
     position: "relative",
     background: "#023047",
-    height: isDropdownOpen ? "140px" : "50px",
+    height: isDropdownOpen ? "70px" : "50px",
     transition: "height 0.15s ease",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "0 10px",
+    overflow: "hidden",
   };
 
   const navigationStyle = {
@@ -43,20 +45,24 @@ const WorkNavBar = () => {
 
   const listStyle = {
     color: "#fb8500",
-    fontSize: "18px",
+    fontSize: "20px",
     margin: 0,
-    padding: 12,
+    paddingLeft: "80px",
     listStyle: "none",
     textAlign: "center",
-    width: "250px",
+    width: "700px",
     transition: "opacity 0.3s ease",
     fontFamily: "'Julius Sans One', sans-serif",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
   };
 
-  const listItemStyle = {
+  const listItemStyle = (isHovered) => ({
     marginBottom: "14px",
     cursor: "pointer",
-  };
+    color: isHovered ? "white" : "#fb8500",
+  });
 
   const handleIconClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -79,13 +85,28 @@ const WorkNavBar = () => {
       <h1 style={navigationStyle}>Work Experience</h1>
       <div style={dropdownStyle}>
         <ul style={listStyle}>
-          <li style={listItemStyle} onClick={handleMainPageClick}>
+          <li
+            style={listItemStyle(hoveredItem === 0)}
+            onClick={handleMainPageClick}
+            onMouseEnter={() => setHoveredItem(0)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
             -Main Page-
           </li>
-          <li style={listItemStyle} onClick={handleMyProjectsClick}>
+          <li
+            style={listItemStyle(hoveredItem === 1)}
+            onClick={handleMyProjectsClick}
+            onMouseEnter={() => setHoveredItem(1)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
             -My Projects-
           </li>
-          <li style={listItemStyle} onClick={handleAboutMeClick}>
+          <li
+            style={listItemStyle(hoveredItem === 2)}
+            onClick={handleAboutMeClick}
+            onMouseEnter={() => setHoveredItem(2)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
             -About Me-
           </li>
         </ul>

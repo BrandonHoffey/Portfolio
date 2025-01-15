@@ -74,6 +74,7 @@ const AboutMe = () => {
               display: "flex",
               justifyContent: "left",
               paddingLeft: "25vw",
+              marginBottom: "15px"
             }}
           >
             <AiTwotoneLeftSquare
