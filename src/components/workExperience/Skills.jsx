@@ -1,4 +1,16 @@
+import { useState, useEffect } from "react";
+
 const Skills = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth <= 768;
+
   const titleStyle = {
     display: "flex",
     marginTop: "0px",
@@ -9,6 +21,7 @@ const Skills = () => {
     color: "#eeeee4",
     paddingLeft: "5px",
     paddingRight: "5px",
+    fontSize: isMobile ? "0.9rem" : undefined,
   };
 
   const skillsStyle = {
@@ -22,7 +35,13 @@ const Skills = () => {
     fontFamily: "'Josefin Slab', sans-serif",
     paddingLeft: "10px",
     paddingRight: "10px",
-  }
+    width: isMobile ? "100%" : "auto",
+  };
+
+  const skillItemStyle = {
+    fontSize: isMobile ? "1rem" : undefined,
+    margin: isMobile ? "5px 0" : undefined,
+  };
 
   return (
     <>
@@ -30,16 +49,16 @@ const Skills = () => {
         <h1>Highlighted Skills</h1>
       </div>
       <div style={skillsStyle}>
-        <h2>JavaScript</h2>
-        <h2>React (Including React Native)</h2>
-        <h2>Mongo DB</h2>
-        <h2>Node JS</h2>
-        <h2>TypeScript</h2>
-        <h2>Git/GitHub</h2>
-        <h2>AWS S3</h2>
-        <h2>Agile Methodology</h2>
-        <h2>QA Testing (Postman)</h2>
-        <h2>Debugging</h2>
+        <h2 style={skillItemStyle}>JavaScript</h2>
+        <h2 style={skillItemStyle}>React (Including React Native)</h2>
+        <h2 style={skillItemStyle}>Mongo DB</h2>
+        <h2 style={skillItemStyle}>Node JS</h2>
+        <h2 style={skillItemStyle}>TypeScript</h2>
+        <h2 style={skillItemStyle}>Git/GitHub</h2>
+        <h2 style={skillItemStyle}>AWS S3</h2>
+        <h2 style={skillItemStyle}>Agile Methodology</h2>
+        <h2 style={skillItemStyle}>QA Testing (Postman)</h2>
+        <h2 style={skillItemStyle}>Debugging</h2>
       </div>
     </>
   );

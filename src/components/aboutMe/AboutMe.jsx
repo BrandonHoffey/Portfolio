@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Fourteener from "../../assets/aboutMe/14er01.jpg";
 import Hiking from "../../assets/aboutMe/Hiking01.jpg";
 import Skiing from "../../assets/aboutMe/Skiing01.jpg";
@@ -18,6 +18,15 @@ const imageDescriptions = [
 
 const AboutMe = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth <= 768;
 
   const goToPrevious = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -35,85 +44,93 @@ const AboutMe = () => {
     <div
       style={{
         display: "flex",
+        flexDirection: isMobile ? "column" : "row",
         alignItems: "center",
-        justifyContent: "space-between",
-        padding: "2px",
-        paddingLeft: "3vw",
+        justifyContent: isMobile ? "flex-start" : "space-between",
+        padding: isMobile ? "15px" : "2px",
+        paddingLeft: isMobile ? "15px" : "3vw",
         maxWidth: "100%",
         overflow: "hidden",
         background: "#8ecae6",
-        paddingBottom: "7px",
+        paddingBottom: isMobile ? "30px" : "7px",
       }}
     >
       <div
         style={{
-          flex: "0 0 60%",
-          marginRight: "20px",
-          position: "relative",
+          flex: isMobile ? "none" : "0 0 45%",
+          width: isMobile ? "100%" : "auto",
+          marginRight: isMobile ? "0" : "20px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
-        <div style={{ position: "relative", paddingBottom: "60px" }}>
-          <img
-            src={images[currentImageIndex]}
-            alt={`${currentImageIndex}`}
-            style={{
-              maxWidth: "100%",
-              maxHeight: "60vh",
-              borderRadius: "24px",
-              paddingTop: "18px",
-              objectFit: "contain"
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: "0",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "100%",
-              display: "flex",
-              justifyContent: "left",
-              paddingLeft: "25vw",
-              marginBottom: "15px"
-            }}
+        <img
+          src={images[currentImageIndex]}
+          alt={`${currentImageIndex}`}
+          style={{
+            maxWidth: isMobile ? "90%" : "100%",
+            maxHeight: isMobile ? "40vh" : "60vh",
+            borderRadius: "24px",
+            marginTop: "18px",
+            objectFit: "contain",
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "15px",
+            gap: "10px",
+          }}
+        >
+          <AiTwotoneLeftSquare
+            onClick={goToPrevious}
+            style={{ fontSize: isMobile ? "2em" : "2.5em", cursor: "pointer" }}
           >
-            <AiTwotoneLeftSquare
-              onClick={goToPrevious}
-              style={{ marginRight: "10px", fontSize: "2.5em" }}
-            >
-              {"<--"}
-            </AiTwotoneLeftSquare>
-            <AiTwotoneRightSquare
-              onClick={goToNext}
-              style={{ fontSize: "2.5em" }}
-            >
-              {"-->"}
-            </AiTwotoneRightSquare>
-          </div>
-          <div
-            style={{
-              marginTop: "20px",
-              fontFamily: "'Josefin Slab', sans-serif",
-              fontSize: "1.1em",
-              fontWeight: "bold",
-              textAlign: "left",
-              paddingLeft: "4vw",
-            }}
+            {"<--"}
+          </AiTwotoneLeftSquare>
+          <AiTwotoneRightSquare
+            onClick={goToNext}
+            style={{ fontSize: isMobile ? "2em" : "2.5em", cursor: "pointer" }}
           >
-            <p>{imageDescriptions[currentImageIndex]}</p>
-          </div>
+            {"-->"}
+          </AiTwotoneRightSquare>
+        </div>
+        <div
+          style={{
+            marginTop: "10px",
+            fontFamily: "'Josefin Slab', sans-serif",
+            fontSize: isMobile ? "0.95em" : "1.1em",
+            fontWeight: "bold",
+            textAlign: "center",
+            padding: "0 20px",
+          }}
+        >
+          <p>{imageDescriptions[currentImageIndex]}</p>
         </div>
       </div>
       <div
         style={{
-          flex: "0 0 40%",
+          flex: isMobile ? "none" : "0 0 50%",
+          width: isMobile ? "100%" : "auto",
           fontFamily: "'Josefin Slab', sans-serif",
-          fontSize: "1.3em",
+          fontSize: isMobile ? "1em" : "1.3em",
           overflowY: "auto",
-          paddingRight: "2vw"
+          paddingRight: isMobile ? "0" : "3vw",
+          marginTop: isMobile ? "10px" : "0",
         }}
       >
-        <p style={{ lineHeight: "1.6", textAlign: "justify", paddingRight: "10vw", fontWeight: "bold" }}>
+        <p
+          style={{
+            lineHeight: "1.6",
+            textAlign: isMobile ? "center" : "justify",
+            paddingRight: isMobile ? "0" : "2vw",
+            padding: isMobile ? "0 10px" : undefined,
+            fontWeight: "bold",
+          }}
+        >
           Hi, I'm Brandon, aspiring to merge my passions into a fulfilling
           career. As a licensed pilot, I'm captivated by aviation's vast
           possibilities and am pursuing advanced certifications. With seven

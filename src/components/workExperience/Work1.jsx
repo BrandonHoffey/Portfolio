@@ -1,7 +1,19 @@
+import { useState, useEffect } from "react";
+
 const Work1 = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth <= 768;
+
   const MainContainerStyle = {
     border: "4px solid #023047",
-    marginRight: "35%",
+    marginRight: isMobile ? "0" : "35%",
     fontFamily: "'Josefin Slab', sans-serif",
     backgroundColor: "#eeeee4",
     borderRadius: "10px",
@@ -13,18 +25,22 @@ const Work1 = () => {
     backgroundColor: "#023047",
     color: "#eeeee4",
     marginBottom: "5px",
+    fontSize: isMobile ? "1.1rem" : undefined,
+    padding: isMobile ? "8px 5px" : undefined,
   };
 
   const h3Style = {
     paddingLeft: "5px",
     paddingRight: "5px",
     marginBottom: "5px",
+    fontSize: isMobile ? "0.95rem" : undefined,
   };
 
   const locationStyle = {
     fontStyle: "italic",
     paddingLeft: "5px",
     paddingRight: "5px",
+    fontSize: isMobile ? "0.9rem" : undefined,
   };
 
   const titleStyle = {
@@ -34,6 +50,7 @@ const Work1 = () => {
     marginBottom: "1px",
     marginTop: "1px",
     fontFamily: "'Julius Sans One', sans-serif",
+    fontSize: isMobile ? "1rem" : undefined,
   };
 
   return (

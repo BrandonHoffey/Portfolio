@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import EscapeTheHospital1 from "../../assets/EscapeTheHospital/1.PNG";
 import Jeopardy1 from "../../assets/JeopardyGame/1.PNG";
 import Jeopardy2 from "../../assets/JeopardyGame/2.PNG";
@@ -9,82 +9,6 @@ import { AiOutlineCaretRight, AiOutlineCaretLeft } from "react-icons/ai";
 
 const jeopardyArray = [Jeopardy1, Jeopardy2, Jeopardy3, Jeopardy4];
 
-const bottomContainerStyle = {
-  display: "flex",
-  flexDisplay: "row",
-  justifyContent: "center",
-  gap: "80px",
-  marginBottom: "80px",
-};
-
-const bottomContainer1Style = {};
-
-const bottomContainer2Style = {};
-
-const bottomContainer3Style = {};
-
-const titleStyle = {
-  borderRadius: "10px",
-  display: "flex",
-  justifyContent: "center",
-  marginTop: "0",
-  marginBottom: "4px",
-  fontFamily: "'Julius Sans One', sans-serif",
-  backgroundColor: "#023047",
-  color: "#eeeee4",
-};
-
-const imageContainerStyle = {
-  border: "4px solid #023047",
-  backgroundColor: "#eeeee4",
-  borderRadius: "10px",
-  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  height: "400px",
-  position: "relative",
-};
-
-const escapeImageStyle = {
-  height: "400px",
-  width: "550px",
-  borderRadius: "5px",
-};
-
-const jeopardyImageStyle = {
-  height: "259px",
-  width: "550px",
-  borderRadius: "10px",
-};
-
-const numberStyle = {
-  height: "278px",
-  width: "550px",
-  borderRadius: "5px",
-};
-
-const arrowStyle = {
-  position: "absolute",
-  top: "50%",
-  transform: "translateY(-50%)",
-  backgroundColor: "transparent",
-  border: "none",
-  fontSize: "2rem",
-  cursor: "pointer",
-  zIndex: 10,
-  color: "rgba(0, 0, 0, 0.5)",
-};
-
-const leftArrowStyle = {
-  ...arrowStyle,
-  left: "-50px",
-  color: "black",
-};
-
-const rightArrowStyle = {
-  ...arrowStyle,
-  right: "-50px",
-  color: "white",
-};
-
 const BottomContainer = () => {
   const [hoveredEscape, setHoveredEscape] = useState(false);
   const [hoveredJeopardy, setHoveredJeopardy] = useState(false);
@@ -93,6 +17,97 @@ const BottomContainer = () => {
   const [currentImage, setCurrentImage] = useState("");
   const [jeopardyImageIndex, setJeopardyImageIndex] = useState(0);
   const [arrowHovered, setArrowHovered] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth <= 768;
+
+  const bottomContainerStyle = {
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    justifyContent: "center",
+    alignItems: isMobile ? "center" : "flex-start",
+    gap: isMobile ? "30px" : "80px",
+    marginBottom: isMobile ? "30px" : "80px",
+    padding: isMobile ? "0 15px" : "0",
+  };
+
+  const titleStyle = {
+    borderRadius: "10px",
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "0",
+    marginBottom: "4px",
+    fontFamily: "'Julius Sans One', sans-serif",
+    backgroundColor: "#023047",
+    color: "#eeeee4",
+    fontSize: isMobile ? "1rem" : "2rem",
+    padding: isMobile ? "8px 15px" : undefined,
+  };
+
+  const imageContainerStyle = {
+    border: "4px solid #023047",
+    backgroundColor: "#eeeee4",
+    borderRadius: "10px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    height: isMobile ? "auto" : "400px",
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+  };
+
+  const escapeImageStyle = {
+    height: isMobile ? "auto" : "400px",
+    width: isMobile ? "100%" : "550px",
+    maxWidth: isMobile ? "90vw" : "none",
+    borderRadius: "5px",
+    objectFit: "contain",
+  };
+
+  const jeopardyImageStyle = {
+    height: isMobile ? "auto" : "259px",
+    width: isMobile ? "100%" : "550px",
+    maxWidth: isMobile ? "90vw" : "none",
+    borderRadius: "10px",
+    objectFit: "contain",
+  };
+
+  const numberStyle = {
+    height: isMobile ? "auto" : "278px",
+    width: isMobile ? "100%" : "550px",
+    maxWidth: isMobile ? "90vw" : "none",
+    borderRadius: "5px",
+    objectFit: "contain",
+  };
+
+  const arrowStyle = {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    backgroundColor: "transparent",
+    border: "none",
+    fontSize: isMobile ? "1.5rem" : "2rem",
+    cursor: "pointer",
+    zIndex: 10,
+    color: "rgba(0, 0, 0, 0.5)",
+  };
+
+  const leftArrowStyle = {
+    ...arrowStyle,
+    left: isMobile ? "-30px" : "-50px",
+    color: "black",
+  };
+
+  const rightArrowStyle = {
+    ...arrowStyle,
+    right: isMobile ? "-30px" : "-50px",
+    color: "white",
+  };
 
   const openModal = (image) => {
     setCurrentImage(image);
@@ -119,7 +134,7 @@ const BottomContainer = () => {
   return (
     <>
       <div style={bottomContainerStyle} id="bottomContainer">
-        <div style={bottomContainer1Style} id="bottomContainer1">
+        <div id="bottomContainer1">
           <div>
             <h1 style={titleStyle}>Escape The Hospital</h1>
           </div>
@@ -139,7 +154,7 @@ const BottomContainer = () => {
             />
           </div>
         </div>
-        <div style={bottomContainer2Style} id="bottomContainer2">
+        <div id="bottomContainer2" style={{ position: "relative" }}>
           <div>
             <h1 style={titleStyle}>Jeopardy Board</h1>
           </div>
@@ -149,7 +164,7 @@ const BottomContainer = () => {
               border: hoveredJeopardy
                 ? "4px solid yellow"
                 : "4px solid #023047",
-              height: "259px",
+              height: isMobile ? "auto" : "259px",
             }}
             onMouseEnter={() => setHoveredJeopardy(true)}
             onMouseLeave={() => setHoveredJeopardy(false)}
@@ -186,7 +201,7 @@ const BottomContainer = () => {
             </button>
           </div>
         </div>
-        <div style={bottomContainer3Style} id="bottomContainer3">
+        <div id="bottomContainer3">
           <div>
             <h1 style={titleStyle}>Guess The Number</h1>
           </div>
@@ -194,7 +209,7 @@ const BottomContainer = () => {
             style={{
               ...imageContainerStyle,
               border: hoveredNumber ? "4px solid yellow" : "4px solid #023047",
-              height: "278px",
+              height: isMobile ? "auto" : "278px",
             }}
             onMouseEnter={() => setHoveredNumber(true)}
             onMouseLeave={() => setHoveredNumber(false)}

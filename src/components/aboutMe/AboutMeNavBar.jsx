@@ -1,21 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
 
 const AboutMeNavigationBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth <= 768;
 
   const containerStyle = {
     position: "relative",
     background: "#023047",
-    height: isDropdownOpen ? "70px" : "50px",
+    height: isDropdownOpen ? (isMobile ? "140px" : "70px") : "50px",
     transition: "height 0.15s ease",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center",
-    padding: "0 10px",
+    alignItems: "flex-start",
+    padding: "10px",
     overflow: "hidden",
   };
 
@@ -23,17 +32,19 @@ const AboutMeNavigationBar = () => {
     fontFamily: "'Josefin Slab', sans-serif",
     color: "white",
     margin: "0",
+    fontSize: isMobile ? "1.2rem" : "2rem",
   };
 
   const dropdownStyle = {
     display: isDropdownOpen ? "block" : "none",
     position: "absolute",
-    top: "10px",
+    top: isMobile ? "45px" : "10px",
     left: "50%",
     transform: "translateX(-50%)",
     opacity: isDropdownOpen ? 1 : 0,
     transition: "opacity 0.3s ease",
     padding: "10px",
+    width: isMobile ? "90%" : "auto",
   };
 
   const iconStyle = {
@@ -45,21 +56,23 @@ const AboutMeNavigationBar = () => {
 
   const listStyle = {
     color: "#fb8500",
-    fontSize: "20px",
+    fontSize: isMobile ? "14px" : "20px",
     margin: 0,
-    paddingLeft: "80px",
+    paddingLeft: isMobile ? "0" : "80px",
     listStyle: "none",
     textAlign: "center",
-    width: "700px",
+    width: isMobile ? "100%" : "700px",
     transition: "opacity 0.3s ease",
     fontFamily: "'Julius Sans One', sans-serif",
     display: "flex",
-    justifyContent: "space-between",
+    flexDirection: isMobile ? "column" : "row",
+    justifyContent: isMobile ? "center" : "space-between",
     alignItems: "center",
+    gap: isMobile ? "8px" : "0",
   };
 
   const listItemStyle = (isHovered) => ({
-    marginBottom: "14px",
+    marginBottom: isMobile ? "0" : "14px",
     cursor: "pointer",
     color: isHovered ? "white" : "#fb8500",
   });
