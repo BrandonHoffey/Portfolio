@@ -14,6 +14,7 @@ const MainIndex = () => {
   const containerStyle = {
     background: "#8ecae6",
     flex: 1,
+    minHeight: 0,
     overflow: "hidden",
     display: "flex",
     alignItems: "center",

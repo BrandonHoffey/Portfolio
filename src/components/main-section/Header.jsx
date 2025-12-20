@@ -13,7 +13,7 @@ const Header = () => {
 
   const headerStyle = {
     textAlign: "center",
-    padding: isMobile ? "2px" : "5px",
+    padding: isMobile ? "5px" : "5px",
     background: "#219ebc",
     fontFamily: "'Julius Sans One', sans-serif",
     overflow: "hidden",

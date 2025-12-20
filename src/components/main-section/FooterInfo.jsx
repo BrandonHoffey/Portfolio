@@ -18,7 +18,7 @@ const MainFooter = () => {
     textAlign: "center",
     width: "100%",
     overflow: "hidden",
-    paddingBottom: isMobile ? "4px" : "6px",
+    paddingBottom: isMobile ? "10px" : "6px",
   };
 
   const linkStyle = {
