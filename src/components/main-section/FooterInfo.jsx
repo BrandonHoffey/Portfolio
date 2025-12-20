@@ -13,12 +13,12 @@ const MainFooter = () => {
 
   const containerStyle = {
     background: "#023047",
-    paddingTop: "10px",
+    paddingTop: isMobile ? "5px" : "10px",
     fontFamily: "'Josefin Slab', sans-serif",
     textAlign: "center",
     width: "100%",
     overflow: "hidden",
-    paddingBottom: "6px",
+    paddingBottom: isMobile ? "4px" : "6px",
   };
 
   const linkStyle = {
@@ -26,12 +26,14 @@ const MainFooter = () => {
     marginRight: "20px",
     textDecoration: "none",
     fontFamily: "'Julius Sans One', sans-serif",
+    fontSize: isMobile ? "14px" : "16px",
   };
 
   const contactInfoStyle = {
     marginTop: "1px",
-    marginBottom: "20px",
+    marginBottom: isMobile ? "8px" : "20px",
     color: "white",
+    fontSize: isMobile ? "14px" : "16px",
   };
 
   return (

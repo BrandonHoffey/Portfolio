@@ -19,12 +19,18 @@ const NavigationBar = () => {
   const containerStyle = {
     position: "relative",
     background: "#023047",
-    height: isDropdownOpen ? (isMobile ? "120px" : "70px") : "50px",
+    height: isDropdownOpen
+      ? isMobile
+        ? "110px"
+        : "70px"
+      : isMobile
+      ? "40px"
+      : "50px",
     transition: "height 0.15s ease",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    padding: "10px",
+    padding: isMobile ? "6px 10px" : "10px",
     overflow: "hidden",
   };
 
@@ -38,17 +44,17 @@ const NavigationBar = () => {
   const dropdownStyle = {
     display: isDropdownOpen ? "block" : "none",
     position: "absolute",
-    top: isMobile ? "45px" : "10px",
+    top: isMobile ? "38px" : "10px",
     left: "50%",
     transform: "translateX(-50%)",
     opacity: isDropdownOpen ? 1 : 0,
     transition: "opacity 0.3s ease",
-    padding: "10px",
+    padding: isMobile ? "5px" : "10px",
     width: isMobile ? "90%" : "auto",
   };
 
   const iconStyle = {
-    fontSize: "30px",
+    fontSize: isMobile ? "24px" : "30px",
     color: "white",
     paddingRight: "10px",
     cursor: "pointer",
