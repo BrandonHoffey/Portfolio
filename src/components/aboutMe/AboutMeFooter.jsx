@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const AboutMeFooter = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowWidth <= 768;
+
   const containerStyle = {
     background: "#023047",
     padding: "10px",
     fontFamily: "'Josefin Slab', sans-serif",
     textAlign: "center",
-    position: "fixed",
-    bottom: "0",
-    width: "100%"
+    width: "100%",
   };
 
   const linkStyle = {
@@ -26,7 +34,9 @@ const AboutMeFooter = () => {
   return (
     <div style={containerStyle}>
       <h3 style={contactInfoStyle}>
-        Contact Info: brandon.hoffey@yahoo.com 720-822-1288
+        Contact Info: brandon.hoffey@yahoo.com
+        {isMobile ? <br /> : " "}
+        720-822-1288
       </h3>
       <div>
         <a

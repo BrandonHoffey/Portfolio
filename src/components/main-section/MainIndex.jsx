@@ -13,18 +13,19 @@ const MainIndex = () => {
 
   const containerStyle = {
     background: "#8ecae6",
-    height: "690px",
+    flex: 1,
     overflow: "hidden",
-    paddingBottom: "2px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   const imageStyle = {
     borderRadius: "60px",
     maxWidth: windowWidth <= 768 ? "80%" : "400px",
-    width: "100%",
+    maxHeight: "80%",
+    objectFit: "contain",
     display: "block",
-    margin: "auto",
-    padding: windowWidth <= 768 ? "20px" : "40px",
   };
 
   return (

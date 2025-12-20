@@ -19,7 +19,7 @@ const NavigationBar = () => {
   const containerStyle = {
     position: "relative",
     background: "#023047",
-    height: isDropdownOpen ? (isMobile ? "140px" : "80px") : "50px",
+    height: isDropdownOpen ? (isMobile ? "120px" : "70px") : "50px",
     transition: "height 0.15s ease",
     display: "flex",
     justifyContent: "space-between",
@@ -56,7 +56,7 @@ const NavigationBar = () => {
 
   const listStyle = {
     color: "#fb8500",
-    fontSize: isMobile ? "14px" : "20px",
+    fontSize: isMobile ? "18px" : "24px",
     margin: 0,
     padding: isMobile ? "0" : "12px",
     paddingLeft: isMobile ? "0" : "80px",
@@ -69,7 +69,7 @@ const NavigationBar = () => {
     flexDirection: isMobile ? "column" : "row",
     justifyContent: isMobile ? "center" : "space-between",
     alignItems: "center",
-    gap: isMobile ? "8px" : "0",
+    gap: isMobile ? "4px" : "0",
   };
 
   const listItemStyle = (isHovered) => ({
